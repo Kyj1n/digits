@@ -11,7 +11,7 @@ import { Contacts } from '../../api/contact/Contacts';
 
 const bridge = new SimpleSchema2Bridge(Contacts.schema);
 
-/* Renders the EditStuff page for editing a single document. */
+/* Renders the EditContact page for editing a single document. */
 const EditContact = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();

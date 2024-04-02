@@ -5,7 +5,7 @@ import { Card, Image, ListGroup } from 'react-bootstrap';
 import Note from './Note';
 import AddNote from '../pages/AddNote';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List table. See pages/List.jsx. */
 const Contact = ({ contact, notes }) => (
   <Card className="h-100">
     <Card.Header>

@@ -39,13 +39,13 @@ Meteor.publish(Notes.userPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish(Contacts.adminPublicationName, function() {
+Meteor.publish(Contacts.adminPublicationName, function () {
   if (this.userID && Roles.userIsInRole(this.userId, 'admin')) {
     return Contacts.collection.find();
   }
 });
 
-Meteor.publish(Notes.adminPublicationName, function() {
+Meteor.publish(Notes.adminPublicationName, function () {
   if (this.userID && Roles.userIsInRole(this.userId, 'admin')) {
     return Notes.collection.find();
   }
@@ -59,5 +59,3 @@ Meteor.publish(null, function () {
   }
   return this.ready();
 });
-
-
