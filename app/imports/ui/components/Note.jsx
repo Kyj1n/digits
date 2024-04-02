@@ -10,7 +10,7 @@ const Note = ({ note }) => (
   </ListGroup.Item>
 );
 
-// Require a document to be passed to this component.
+// Require a document to be passed to this component .
 Note.propTypes = {
   note: PropTypes.shape({
     note: PropTypes.string,
