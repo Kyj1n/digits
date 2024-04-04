@@ -82,134 +82,104 @@ In this screenshot I am currenlty logged in as an admin but usually the next ste
 
 Clicking on the Login link, then on the Sign In menu item displays this page:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/signin-page.png)
+![Screenshot 2024-04-03 at 10.17.28 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.17.28%20PM.png)
+
 
 #### Register page
 
 Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/register-page.png)
+![Screenshot 2024-04-03 at 10.20.10 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.20.10%20PM.png)
 
 
 #### Landing (after Login) page, non-Admin user
 
 Once you log in (either to an existing account or by creating a new one), the navbar changes as follows:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/landing-after-login-page.png)
+![Screenshot 2024-04-03 at 10.20.50 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.20.50%20PM.png)
 
-You can now add new Stuff documents, and list the Stuff you have created. Note you cannot see any Stuff created by other users.
+You can now add new Contacts, and list the contacts you have created. Note you cannot see any Stuff created by other users. In our landing page we also have an Admin page as we are logged in as an admin account.
 
-#### Add Stuff page
+#### Add Contact page
 
-After logging in, here is the page that allows you to add new Stuff:
+After logging in, here is the page that allows you to add new contacts:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/add-stuff-page.png)
+![Screenshot 2024-04-03 at 10.23.32 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.23.32%20PM.png)
 
 #### List Stuff page
 
-After logging in, here is the page that allows you to list all the Stuff you have created:
+After logging in, here is the page that allows you to list all the contacts you have created. You can also edit if needed.:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/list-stuff-page.png)
+![Screenshot 2024-04-03 at 10.24.08 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.24.08%20PM.png)
 
 You click the "Edit" link to go to the Edit Stuff page, shown next.
 
-#### Edit Stuff page
+#### Edit contact page
 
-After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save it:
+After clicking on the "Edit" link associated with an item, this page displays that allows you to change and save an edit to a specific contact:
 
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/edit-stuff-page.png)
+![Screenshot 2024-04-03 at 10.24.42 PM.png](doc%2FScreenshot%202024-04-03%20at%2010.24.42%20PM.png)
 
-#### Landing (after Login), Admin user
-
-You can define an "admin" user in the settings.json file. This user, after logging in, gets a special entry in the navbar:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/admin-landing-page.png)
 
 #### Admin page (list all users stuff)
 
-To provide a simple example of a "super power" for Admin users, the Admin page lists all of the Stuff by all of the users:
-
-![](https://github.com/ics-software-engineering/meteor-application-template-react/raw/main/doc/admin-list-stuff-page.png)
-
-Note that non-admin users cannot get to this page, even if they type in the URL by hand.
-
-### Collections
-
-The application implements a single Collection called "Stuffs". Each Stuffs document has the following fields: name, quantity, condition, and username.
-
-The Stuffs collection is defined in [imports/api/stuff/stuff.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/app/imports/api/stuff/stuff.js).
-
-The Stuffs collection is initialized in [imports/startup/server/Mongo.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/app/imports/startup/server/Mongo.js).
+To provide a simple example of a "special power" for Admin users, the Admin page lists all of the contacts by all of the users:
 
 ### CSS
 
 The application uses the [React implementation of Bootstrap 5](https://react-bootstrap.github.io/). You can adjust the theme by editing the `app/client/style.css` file. To change the theme override the Bootstrap 5 CSS variables.
 
 ```css
+/* Use Open Sans as the default sans serif font. */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+
+/* Set up some CSS variables to theme the application. */
+:root {
+  --matr-navbar-bg: darkblue;
+  --matr-navbar-bg-rgb: 0, 0, 139;
+  --matr-navbar-text-color: white;
+  --matr-navbar-highlight-text: khaki;
+}
+
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-light-rgb: 236, 236, 236;
+  --bs-dark: var(--matr-navbar-bg);
+  --bs-dark-rgb: var(--matr-navbar-bg-rgb);
+  background: fixed center url("images/vibrant-multicolor-beautiful-sky-cloud-copy-space-background_176697-1603.avif");
+  background-size: cover;
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--matr-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--matr-navbar-highlight-text);
+  --bs-navbar-color: var(--matr-navbar-text-color);
+  --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
+}
+
+.bg-dark a.dropdown-item {
+  color: var(--matr-navbar-bg);
+}
+
+
+/* Set the alert background on the signin and signup pages. */
+#signin-page .alert-light, #signup-page .alert-light {
+  --bs-alert-bg: var(--matr-navbar-bg);
 }
 
 /* Define custom styles */
 .gray-background {
-  background-color: var(--bs-gray-200);
+  background-color: var(--matr-navbar-bg);
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
 }
-```
 
-### Routing
-
-For display and navigation among its four pages, the application uses [React Router](https://reacttraining.com/react-router/).
-
-Routing is defined in [imports/ui/layouts/App.jsx](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/app/imports/ui/layouts/App.jsx).
-
-
-### Authentication
-
-For authentication, the application uses the Meteor accounts package.
-
-When the application is run for the first time, a settings file (such as [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/config/settings.development.json)) should be passed to Meteor. That will lead to a default account being created through the code in [imports/startup/server/accounts.js](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/app/imports/startup/server/accounts.js).
-
-The application allows users to register and create new accounts at any time.
-
-### Authorization
-
-Only logged in users can manipulate Stuff documents (but any registered user can manipulate any Stuff document, even if they weren't the user that created it.)
-
-### Configuration
-
-The [config](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/config) directory is intended to hold settings files.  The repository contains one file: [config/settings.development.json](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/config/settings.development.json).
-
-The [.gitignore](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/.gitignore) file prevents a file named settings.production.json from being committed to the repository. So, if you are deploying the application, you can put settings in a file named settings.production.json and it will not be committed.
-
-### Quality Assurance
-
-#### ESLint
-
-The application includes a [.eslintrc](https://github.com/ics-software-engineering/meteor-application-template-react/blob/main/app/.eslintrc) file to define the coding style adhered to in this application. You can invoke ESLint from the command line as follows:
+footer, footer a {
+  color: var(--matr-navbar-text-color);
+}
 
 ```
-[~/meteor-application-template-react/app]-> meteor npm run lint
 
-> meteor-application-template-react@ lint /Users/philipjohnson/meteor-application-template-react/app
-> eslint --quiet ./imports
-```
-
-ESLint should run without generating any errors.
-
-It's significantly easier to do development with ESLint integrated directly into your IDE (such as IntelliJ).
-
-## Screencasts
-
-For more information about this system, please watch one or more of the following screencasts. Note that the current source code might differ slightly from the code in these screencasts, but the changes should be very minor.
-
-  * [Walkthrough of system user interface (6 min)](https://youtu.be/48xu1hrqUi8)
-  * [Data and accounts structure and initialization (18 min)](https://youtu.be/HZRjwrVBWp4)
-  * [Navigation, routing, pages, components (34 min)](https://youtu.be/XztTdHpv6Jw)
-  * [Forms (32 min)](https://youtu.be/8FyWR3gUGCM)
-  * [Authorization, authentication, and roles (12 min)](https://youtu.be/9HX5vuXTlvA)
