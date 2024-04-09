@@ -17,6 +17,7 @@ import ListContacts from '../pages/ListContacts';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
 import AddContact from '../pages/AddContact';
 import EditContact from '../pages/EditContact';
+import ProfilePage from '../pages/ProfilePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListContacts /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddContact /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditContact /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute><ListContactsAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
